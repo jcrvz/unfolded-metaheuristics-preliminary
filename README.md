@@ -67,3 +67,9 @@ The experiments were saved in JSON files. [Further information can be found here
 ```
 </p>
 </details>
+
+## Contact information
+
+Jorge M. Cruz-Duarte - [jcrvz.github.io](jcrvz.github.io), [jorge.cruz@tec.mx](mailto:jorge.cruz@tec.mx)
+
+Distributed under the MIT license. See LICENSE.txt for more information.
