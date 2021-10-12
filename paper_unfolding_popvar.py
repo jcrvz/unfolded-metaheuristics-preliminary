@@ -148,7 +148,7 @@ full_table['Dim'] = full_table['Dim'].apply(lambda x: int(x))
 
 full_table['Rank'] = full_table.groupby(by=['Dim', 'Problem'])['Performance'].rank(method='dense')
 full_table['RankSR'] = full_table.groupby(by=['Dim', 'Problem'])['successRate'].rank(method='dense', ascending=False)
-full_table['DimPop'] = full_table[['Dim', 'Pop']].agg(tuple, axis=1)
+#full_table['DimPop'] = full_table[['Dim', 'Pop']].agg(tuple, axis=1)
 
 
 def app_time_complexity(row):
