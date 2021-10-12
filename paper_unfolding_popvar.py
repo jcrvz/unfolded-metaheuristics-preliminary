@@ -102,7 +102,7 @@ if is_saving:
         os.mkdir(folder_name)
 
 # Read the data file and assign the variables
-data_filenames = {30: "unfolded_metaheuristics", 50: "unfolded_hhs_pop50", 100: "unfolded_hhs_pop100"}
+data_filenames = {30: "unfolded_hhs_pop30", 50: "unfolded_hhs_pop50", 100: "unfolded_hhs_pop100"}
 
 data_tables = dict()
 
@@ -121,12 +121,12 @@ for population, filename in data_filenames.items():
     success_rates = [np.sum(x < 0.0) / len(x) for x in performance_comparison]
 
     # Create a data frame
-    if population == 30:
-        hFitness = [[y[-1] for y in x['hist_fitness'][-1]] for x in data_frame['results']]
-        pValue = [stats.normaltest([y[-1] for y in x['hist_fitness'][-1]])[1] for x in data_frame['results']]
-    else:
-        hFitness = [[y[-1] for y in x['hist_fitness']] for x in data_frame['results']]
-        pValue = [stats.normaltest([y[-1] for y in x['hist_fitness']])[1] for x in data_frame['results']]
+    #if population == 30:
+    #    hFitness = [[y[-1] for y in x['hist_fitness'][-1]] for x in data_frame['results']]
+    #    pValue = [stats.normaltest([y[-1] for y in x['hist_fitness'][-1]])[1] for x in data_frame['results']]
+    #else:
+    hFitness = [[y[-1] for y in x['hist_fitness']] for x in data_frame['results']]
+    pValue = [stats.normaltest([y[-1] for y in x['hist_fitness']])[1] for x in data_frame['results']]
 
     data_tables[population] = pd.DataFrame({
         'Dim': [str(x) for x in data_frame['dimensions']],
